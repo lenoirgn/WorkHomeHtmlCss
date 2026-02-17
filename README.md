@@ -25,11 +25,6 @@ C'est mon espace d'apprentissage où je mets en pratique les concepts fondamenta
 - HTML5
 - CSS3
 
-## 📁 Structure du projet
-
-```
-
-```
 
 ## 🚀 Comment utiliser
 
@@ -77,6 +72,6 @@ Votre aide m'aidera à progresser ! 🚀
 **Dernière mise à jour :** 17 février 2026
 
 *"Le code parfait n'existe pas, seul le code en amélioration existe !"* 💪
-```
+
 
 
