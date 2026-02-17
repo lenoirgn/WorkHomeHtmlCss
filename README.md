@@ -28,19 +28,7 @@ C'est mon espace d'apprentissage où je mets en pratique les concepts fondamenta
 ## 📁 Structure du projet
 
 ```
-WorkHomeHtmlCss/
-├── index.html
-├── style.css
-├── devoirs/
-│   ├── devoir1/
-│   ├── devoir2/
-│   └── ...
-├── exercices/
-│   ├── pratique1/
-│   ├── pratique2/
-│   └── ...
-└── projets/
-    └── ...
+
 ```
 
 ## 🚀 Comment utiliser
