@@ -1,0 +1,42 @@
+div#tablePeriodique {
+    width : 1000px;
+    margin : auto;
+    background-color : rgb(255,255,128);
+    padding : 0.5%;
+}
+
+#etc {
+    font-size : 40px;
+}
+
+div.atome {
+    display : inline-block;
+   
+}
+div.bloc {
+   float: right;
+}
+.ligne {
+    clear: both;
+}
+div.atome.helium {
+   float: left;
+}
+div.atome.non-métaux {
+    background-color : rgb(255,128,128);
+}
+div.atome.métaux-alcalins {
+    background-color : rgb(128,255,128);
+}
+div.atome.métaux-alcalino-terreux {
+    background-color : rgb(3, 39, 241);
+}
+div.atome.métalloïdes {
+    background-color : rgb(246, 4, 4);
+}
+div.atome.halogènes {
+    background-color : rgb(255, 0, 255);
+}
+div.ligne.un  div.nb-electron {
+    color : rgb(128,0,0);
+}

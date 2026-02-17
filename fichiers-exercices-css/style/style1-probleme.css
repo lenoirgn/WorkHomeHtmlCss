@@ -1,0 +1,42 @@
+
+body {
+
+	background-color: rgb(248,248,248); 
+}
+
+/* problème ici : il manque l'accolade fermante de déclaration du bloc body	*/
+	
+
+
+h1 {
+	color			: yellow;		
+	background-color: navy;
+	font-weight		: bold;
+	font-size		: 24px;
+}
+
+p {
+	background-color: #888888;	
+	
+	/* problème ici : il manque le ";" après la définition de propriété	color */
+	color			: #FFFFFF;
+
+	font-size		: 14px;
+}
+
+pre {
+	color			: navy;
+	background-color :white;
+}
+
+
+								
+strong {
+	color 			: yellow; 
+	font-style		: italic;
+	font-weight		: normal;
+}
+
+abbr {
+	text-decoration : underline;
+}

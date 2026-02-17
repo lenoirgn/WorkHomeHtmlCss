@@ -1,0 +1,25 @@
+body{
+    background-color:#5b7bb8 ;
+}
+h1{
+    color: #fff;
+    background-color: #000;
+}
+p{
+    color:#FF00FF;
+    background-color: #000;
+  font-family: Georgia, serif;
+  text-align: right;
+font-size: 35px;
+
+}
+a{
+    color: #fff;
+    text-align: right;
+    text-decoration: underline overline #10c90a;
+}
+code{font-family: Georgia;
+    font-size: 15px;
+
+
+}

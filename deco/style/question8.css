@@ -1,0 +1,8 @@
+header{
+    background-image: url("../images/boussole-header.png");
+    background-size: 100% auto;
+    color: white;
+    text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.7);
+    box-shadow: 4px 4px 8px 5px rgba(0,0,0,0.4); 
+    border: none;
+}

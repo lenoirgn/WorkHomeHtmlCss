@@ -1,0 +1,94 @@
+div.atome {
+ 
+    width : 90px;
+    height : auto;
+    margin : 1px 1px;    
+    background-color : rgb(128,128,255);
+    position: relative;
+
+}
+ div.numero {
+    position: relative;
+     left: 2%;
+     top: 0%;
+                   
+ }
+div.electronegativite{
+     position: absolute;
+    top: 1%;
+     left: 40%; 
+}
+div.coucheselectrons{
+      position: absolute;
+     top: 1%;
+     right:  2%; 
+}
+div.masseatomique{
+     position: absolute;
+     bottom:  1%;
+     left:   2%; 
+    
+}
+div.atome div.numero {
+    font-size : 16px;
+    font-weight : bold;
+}
+div.nom{
+    position: relative;
+     bottom:  15%;
+     
+    
+}
+div.symbole{
+    position: relative;
+     bottom:  20%;
+     
+    
+}
+div.atome div.electronegativite {
+    font-size : 9px;
+}
+
+div.atome div.coucheselectrons {
+    font-size : 8px;
+}
+
+div.atome div.symbole {
+    font-size: 36px;   
+    font-weight : bold;
+    font-family: sans-serif;
+	text-align:center;
+}
+
+div.atome div.nom {
+    font-style : italic;
+    font-size : 10px;
+	text-align:center;
+}
+
+
+div.atome div.masseatomique {
+    font-size : 8px;    
+}
+
+div.atome div.symbole {
+    bottom:10px;
+
+}
+div.atome div.nom {
+    bottom:15px;
+}
+div.ligne {
+    display: block;
+
+    clear: both;
+}
+div.ligne.un  div.nb-electron {
+    color : rgb(128,0,0);
+}
+div.ligne.deux  div.nb-electron {
+    color : rgb(64,0,0);
+}
+div.ligne.trois  div.nb-electron {
+    color : rgb(32,0,0);
+}

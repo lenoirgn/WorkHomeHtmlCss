@@ -1,0 +1,51 @@
+body {
+  background-color: #2196F3; 
+  color : #212121;
+}
+
+h1{
+  width: 75%;
+  text-align: center;
+  margin: 0 auto; 
+
+}
+h2, section {
+    border: 1px solid #BDBDBD; 
+}
+h2 {
+    border-left: 10px solid #BDBDBD; 
+    padding-left: 20px;              
+}
+h1, h2 {
+  color : white;
+  
+}
+h1,h2 {
+  background-color : #1976D2; 
+}
+
+
+section {
+  background-color : #40C4FF;
+   padding: 5px 10px 
+}
+
+article, header {
+  background-color : #FFFFFF;
+   margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+header {
+  background-color : #0091EA; 
+  color : white;
+  border-bottom: 3px solid #BDBDBD;
+  padding: 10px 20px;
+
+}
+
+div {
+    padding: 5px 20px;
+}
+
+

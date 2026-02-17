@@ -1,0 +1,40 @@
+html {
+  background-color : white;
+}
+body {
+  background-color: #BDBDBD;
+  color : #212121;
+}
+
+section {
+  background-color : #B3E5FC;
+  width: 100%;
+  height: auto;
+}
+
+h1, h2 {
+  color : #FFFFFF;
+  background-color: #0288D1;
+  width: 100%;
+  height: auto;
+}
+
+header {
+  color : #757575;
+  width: 100%;
+  height: auto;
+}
+
+p, header {
+  background-color : #FFFFFF;
+  height: auto;
+}
+
+strong {
+  color : #4CAF50;
+}
+img{
+	width: 100%;
+  height: auto;
+	
+}

@@ -1,0 +1,41 @@
+.
+├── ODI
+│   ├── rapport-markdown.md
+│   ├── recette
+│   │   ├── img
+│   │   │   └── carbonara.jpg
+│   │   └── recette.html
+│   ├── recette.html
+│   ├── recette.md
+│   ├── recette.zip
+│   ├── xampl1
+│   │   ├── md-premier.md
+│   │   └── ulille-vert-avenir.png
+│   └── xampl1.zip
+├── Prog
+│   ├── CTP
+│   │   ├── controleTP1.py
+│   │   ├── erreurs_cTPi.py
+│   │   └── manipulations_cTPi.py
+│   └── TP1
+│       ├── calculs_sem2.py
+│       ├── categories.py
+│       ├── conditionnelles_simples.py
+│       ├── erreurs_cond.py
+│       ├── erreurs_multiples_sem3.py
+│       ├── fenetre_panneau_sem2.py
+│       ├── fonctions_simples.py
+│       ├── fonctions_simples_vide.py
+│       ├── manip_debog.py
+│       ├── manip_formules_sem1.py
+│       ├── manipulations_sem3.py
+│       ├── mesure_global.py
+│       ├── minutes_sem2.py
+│       ├── panneau_sem2.py
+│       ├── predicats_plus_complexes.py
+│       ├── predicats_simples.py
+│       ├── turtle.py
+│       └── tva_sem2.py
+└── tree.txt
+
+8 directories, 31 files

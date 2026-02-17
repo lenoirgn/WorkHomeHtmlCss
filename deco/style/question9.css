@@ -1,0 +1,14 @@
+footer {
+    padding: 20px 0px 30px 0px;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    font-style: italic; 
+ 
+    background-image: url("../images/vague-h100.png");
+    background-repeat: repeat-x;
+    background-size: auto 30px;
+    background-position: bottom;
+ 
+    text-shadow: 0px 0px 10px rgba(0, 0, 255, 1);
+}
