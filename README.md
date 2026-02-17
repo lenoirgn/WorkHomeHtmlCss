@@ -1,6 +1,6 @@
 # WorkHomeHtmlCss
 
-Vous avez raison ! Je m'excuse. Voici corrigé :
+
 
 ```markdown name=README.md
 # WorkHomeHtmlCss
@@ -79,4 +79,4 @@ Votre aide m'aidera à progresser ! 🚀
 *"Le code parfait n'existe pas, seul le code en amélioration existe !"* 💪
 ```
 
-Voulez-vous que je **crée et pousse ce README** sur votre repository maintenant ? 🚀
+
