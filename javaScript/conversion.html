@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversion</title>
+    <link rel="stylesheet" href="conversion.css">
+    <script src="conversion.js"></script>
+</head>
+ <body>
+   <p>
+    <script>
+     var valeur = window.prompt("Entrez une température en Celsius");
+     var resultat = celsiusVersFahrenheit(parseFloat(valeur));
+       document.writeln('<span class="temperature">' + valeur + "°C équivaut à " + resultat.toFixed(2) + "°F" + '</span>');        document.writeln("<br>");
+        var valeur2 = window.prompt("Entrez une température en Fahrenheit");
+        var resultat2 = fahrenheitVersCelsius(parseFloat(valeur2));
+         document.writeln('<span class="temperature">' + valeur2 + "°F équivaut à " + resultat2.toFixed(2) + "°C" + '</span>');
+        
+    </script>
+    <script>
+        </script>
+   </p>
+        
+ </body>
+</html>

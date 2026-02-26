@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petit</title>
+    <link rel="stylesheet" href="petit.css">
+    <script src="petit.js"></script>
+</head>
+ <body>
+    <p>
+     <script>
+      var valeur = window.prompt("Entrez un nombre");
+      if (isNaN(valeur)) {
+       alert("Veuillez entrer un nombre valide.");
+    document.writeln('<span class="error">Erreur : "' + valeur + '" n\'est pas un nombre.</span>');}
+       else{ 
+      var resultat = foisCent(parseInt(valeur));
+      var resultat2= plusCent(parseInt(valeur));
+      document.writeln('<span class="result">' + valeur + " multiplié par 100 équivaut à " + resultat + '</span>');       
+      document.writeln("<br>");
+      document.writeln('<span class="result">' + valeur + " plus 100 équivaut à " + resultat2 + '</span>');} 
+     </script>
+    
+    </p>
+ </body>
+</html>
