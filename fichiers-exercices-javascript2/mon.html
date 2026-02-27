@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemple Poke et Compteur</title>
+    <link rel="stylesheet" href="mon.css">
+</head>
+<body>
+    
+    <div id="poke">cliquez ici</div>
+    <div id="compteur">0</div>
+
+    <script>
+   // Récupération des éléments
+const poke = document.getElementById("poke");
+const compteurDiv = document.getElementById("compteur");
+
+// Fonction d'écoute
+function incrementerCompteur() {
+    // Récupère la valeur actuelle du compteur et convertit en nombre
+    let valeur = parseInt(compteurDiv.textContent);
+    if (isNaN(valeur)) valeur = 0;
+
+    // Incrémente
+    valeur += 1;
+
+    // Met à jour le div
+    compteurDiv.textContent = valeur;
+
+    // Désabonne la fonction si le compteur atteint 5
+    if (valeur >= 5) {
+        poke.removeEventListener("click", incrementerCompteur);
+        // Optionnel : on peut changer le style pour montrer que c'est inactif
+        poke.style.opacity = 0.5;
+        poke.style.cursor = "default";
+    }
+}
+
+// Abonnement initial
+poke.addEventListener("click", incrementerCompteur);
+  
+    </script>
+
+</body>
+</html>
