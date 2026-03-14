@@ -1,0 +1,43 @@
+const valInput = document.getElementById("delai");
+const lectureButton = document.getElementById("Lecture");
+const stopButton = document.getElementById("Stop");
+let indiceImage = 0;
+
+function setuplisteners() {
+    valInput.addEventListener('input', recupereValeurInput);
+    lectureButton.addEventListener("click", lectureDiaporama);
+    stopButton.addEventListener("click", stopDiaporama);
+}
+
+function recupereValeurInput() {
+    const input = document.getElementById("delai");
+    const valeur = input.value;
+    return valeur;
+}
+function afficheinfo() {
+    const image = document.getElementById("diapo");
+    let indice=tabImages.indexOf(image.src);
+    const info = document.getElementById("info");
+    info.textContent = (indice+1) + "/" + tabImages.length;
+}
+
+
+
+function afficheNomImage() {
+    const image = document.getElementById("diapo");
+    let indice=tabImages.indexOf(image.src);
+    let Image=tabImages[indice];
+    const nomImage=Image.substring(7);
+    const nomImageElement = document.getElementById("nomImage");
+    nomImageElement.textContent = nomImage;
+}
+let montimer = null;
+function lectureDiaporama() {
+    montimer=window.setInterval(imageSuivante,recupereValeurInput()*1000);
+}
+function stopDiaporama() {
+    window.clearInterval(montimer);
+}
+setuplisteners();
+afficheinfo();
+afficheNomImage();

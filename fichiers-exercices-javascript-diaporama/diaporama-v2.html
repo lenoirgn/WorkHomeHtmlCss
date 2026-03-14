@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+
+  <head>
+    <title> deuxieme diaporama</title>
+    <meta charset="UTF-8" />
+
+    <link href="style/style-diapo.css" type="text/css" rel="stylesheet" />
+
+		<!-- chargement du script -->
+	<script src="scripts/tabImages.js" ></script>
+    <script src="scripts/diapov1.js" defer></script>
+	<script src="scripts/diapov2.js" defer></script>
+
+
+  </head>
+  <body>
+    <div>
+        <input type="text" id="delai" placeholder="Entrez un nombre">
+    </div>
+    <div>
+        <p id="info"></p>
+    </div>
+    <div>
+        <p id="nomImage"></p>
+    </div>
+	<div class="diaporama">
+		<img src="images/image.jpg" alt="un diaporama" id="diapo"/>
+	</div>
+  <div class="bouton">
+    <button id="Lecture">Lecture</button>
+    <button id="Stop">Stop</button>
+  </div>
+  </body>
+</html>

@@ -105,6 +105,60 @@ pano.addEventListener("mouseout",changePano2);
 
 `cToF et fToC` ce sont des `bouton`
 
+- Exercice6:
+1. 
+```
+const element = document.getElementById("timoleon");
+const proprietes = window.getComputedStyle(element);
+proprietes.width ;        /* la valeur de la largeur de l'élément dont l'id est 'timoleon'*/
+"1738.8px" 
+```
+Fenetre reduite 
+```
+const element = document.getElementById("timoleon");
+const proprietes = window.getComputedStyle(element);
+proprietes.width ;        /* la valeur de la largeur de l'élément dont l'id est 'timoleon'*/
+"870.5px" 
+```
+
+```
+const element = document.getElementById("timoleon");
+const proprietes = window.getComputedStyle(element);
+proprietes.width ;        /* la valeur de la largeur de l'élément dont l'id est 'timoleon'*/
+     
+element.style.width;
+"" 
+```
+2. 
+```
+const element = document.getElementById("timoleon");   
+element.style.width = "50%";
+"50%" 
+```
+```
+const element = document.getElementById("timoleon");   
+element.style.width = "50%";
+const proprietes = window.getComputedStyle(element);
+proprietes.width ;
+"904.4px" 
+```
+Conclusion: `window.getComputedStyle()` renvoie la valeur rapport au navigateur tandis que `style.width` renvoi la valeur telle qu'elle est definie sur la feuille de style.
+
+
+```
+function loupe(para){
+  const Element=document.getElementById(para)
+ const proprietes = window.getComputedStyle(Element);
+const taille=parseFloat(proprietes.fontSize)*2;
+Element.style.fontSize=taille +"px"
+  
+}
+loupe("gr34")
+```
+
+
+
+
 
 
 
