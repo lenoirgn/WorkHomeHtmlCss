@@ -11,7 +11,7 @@ Mon premier projet web ! 🎓
 
 Ce référentiel regroupe l'ensemble de mes premiers pas en HTML et CSS. Il contient tous mes devoirs, exercices pratiques et projets réalisés durant ma formation à l'université.
 
-C'est mon espace d'apprentissage où je mets en pratique les concepts fondamentaux du développement web front-end.
+C'est mon espace d'apprentissage où je mets en pratique les concepts fondamentaux du développement web front-end(Html/Css-Javascripts).
 
 ## 🎯 Objectifs d'apprentissage
 
