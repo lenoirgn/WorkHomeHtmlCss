@@ -43,3 +43,73 @@ function tousVerts(elem, noeud){
 
 }
 ```
+
+- Exercice3:
+
+1. 
+```
+const listeElement=document.getElementsByClassName("droite");
+
+for (el of listeElement){
+  el.style.padding="20px";
+}
+```
+2. 
+```
+const parent = document.getElementById("ajoncs");
+const descendants = parent.getElementsByClassName("par");
+
+for (let d of descendants) {
+    d.style.border = "1px solid blue";
+}
+```
+
+3. 
+```
+function cacherClasse(nomClasse) {
+    const elements = document.getElementsByClassName(nomClasse);
+  
+    for (let el of elements) {
+        el.style.display = "none";
+    }
+}
+```
+4. 
+```
+function devoileClasse(nomClasse) {
+    const elements = document.getElementsByClassName(nomClasse);
+    
+    for (let el of elements) {
+        el.style.display = "";
+    }
+}
+```
+- Exercice4:
+
+1. 
+```
+NodeList [ div.par, div#timoleon.par ]
+```
+2. 
+ l'element `div#ajoncs div.par` se met au fond `vert`
+
+3. 
+
+`div.par p:nth-of-type(1)`: selectionne le premier paragraphe a l'interieur de chaque `div` de la class `par`
+
+
+```
+const liElement=document.querySelectorAll("div.par p:nth-of-type(1)");
+
+for (let el of liElement){
+  el.style.fontWeight="bold";
+}
+```
+4. 
+```
+const lesElements = document.querySelectorAll("div.par img.droite");
+lesElements.length;
+2 
+```
+
+l'image a pris la moitie de son conteneur 
