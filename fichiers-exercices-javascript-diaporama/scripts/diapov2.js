@@ -1,15 +1,27 @@
 const valInput = document.getElementById("delai");
-const lectureButton = document.getElementById("Lecture");
-const stopButton = document.getElementById("Stop");
+const Button = document.getElementById("bouton");
+const btnIcon = document.getElementById("btnIcon");
+// const lectureButton = document.getElementById("Lecture");
+// const stopButton = document.getElementById("Stop");
 let indiceImage = 0;
 let montimer = null;
 
 function setuplisteners() {
     valInput.addEventListener('input', recupereValeurInput);
-
-    lectureButton.addEventListener("click", lectureDiaporama);
-    stopButton.addEventListener("click", stopDiaporama);
+    Button.addEventListener("click", lectureStopDiaporama);
+    // lectureButton.addEventListener("click", lectureDiaporama);
+    //stopButton.addEventListener("click", stopDiaporama);
 }
+function lectureStopDiaporama() {
+    if (montimer) {
+        stopDiaporama();
+        btnIcon.src = "images/lecture.png";
+    } else {
+        lectureDiaporama();
+        btnIcon.src = "images/stop.png";
+    }
+}
+
 function afficheImage (indiceImage){
     const images=document.getElementById("diapo");
     images.src=tabImages[indiceImage];
@@ -28,22 +40,16 @@ function recupereValeurInput() {
 }
 
 
-
 function afficheinfo() {
-    const image = document.getElementById("diapo");
-
-    let indice=tabImages.indexOf(image.src);
-   
-
-
     const info = document.getElementById("info");
-    info.textContent = (indice >= 0 ? indice + 1 : "?") + "/" + tabImages.length;
+    info.textContent = (indiceImage + 1) + "/" + tabImages.length;
 }
 
-function afficheImage (indiceImage){
-    const images=document.getElementById("diapo");
-    images.src=tabImages[indiceImage];
+function afficheNomImage() {
+    const nomImage = tabImages[indiceImage].split("/").pop(); 
+    document.getElementById("nomImage").textContent = nomImage;
 }
+
 
 function imageSuivante(){
     indiceImage=(indiceImage+1)%tabImages.length;
@@ -51,22 +57,6 @@ function imageSuivante(){
     afficheinfo();
     afficheNomImage();
 }
-function afficheNomImage() {
-
-    const image = document.getElementById("diapo");
-    let indice=tabImages.indexOf(image.src);
-    let Image=tabImages[indice];
-    console.log(Image)
-    const nomImage=Image.substring(7);
-    const nomImageElement = document.getElementById("nomImage");
-    nomImageElement.textContent = nomImage;
-}
-let montimer = null;
-function lectureDiaporama() {
-    montimer=window.setInterval(imageSuivante,recupereValeurInput()*1000);
-    log.console(montimer)
-
-    }
 
 function lectureDiaporama() {
     const delai = recupereValeurInput();
@@ -84,7 +74,6 @@ function stopDiaporama() {
     montimer = null;
 }
 
-// Lancement au chargement
 setuplisteners();
 afficheinfo();
 afficheNomImage();

@@ -28,3 +28,33 @@ button:hover {
 	width : 40px;
 	text-align : right;
 }
+
+/* Conteneur info et nom de l'image */
+#info, #nomImage {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin: 8px 0;
+    padding: 6px 12px;
+    border-radius: 12px;
+    display: inline-block;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Nombre d'image (ex: 1/8) */
+#info {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ff7a00; /* texte orange */
+    background-color: rgba(255, 122, 0, 0.15); /* fond orange clair */
+}
+
+/* Nom de l'image (ex: image.jpg) */
+#nomImage {
+    font-size: 16px;
+    font-style: italic;
+    color: #222; /* gris foncé */
+    background-color: rgba(200, 200, 200, 0.2); /* fond gris clair */
+}
+
+
+
