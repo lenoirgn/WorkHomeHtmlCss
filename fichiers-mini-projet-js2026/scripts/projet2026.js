@@ -35,6 +35,7 @@ const createShop = function () {
 	const shop = document.getElementById("boutique");
 	for(let i = 0; i < catalog.length; i++) {
 		shop.appendChild(createProduct(catalog[i], i));
+
 	}
 }
 
@@ -114,7 +115,7 @@ const createOrderControlBlock = function (index) {
 
 	// TODO :  Q5 mettre en place le gestionnaire d'événément pour input permettant de contrôler les valeurs saisies
 	control.appendChild(input);
-
+	input.addEventListener("input", verifQuantity);
 	// Crée le bouton de commande
 	const button = document.createElement("button");
 	button.className = 'commander';
@@ -132,7 +133,16 @@ const createOrderControlBlock = function (index) {
 */
 const createFigureBlock = function (product) {
 	// TODO : code incorrect : à modifier Q4 
+    const figure = document.createElement("figure");
+	const img = document.createElement("img");
+	img.src=product.image;
+	img.alt=product.name;
+	figure.appendChild(img);
+	
+	return figure;
+
 }
+
 
 
 /** 
@@ -145,9 +155,16 @@ const orderProduct = function () {
 	if (qty > 0) {
 		addProductToCart(idx, qty); // ajoute un produit au panier
 		//TODO gérer la remise à zéro de la quantité après la commande 
+		// et tous les comportements du bouton représentant le chariot
+		//TODO gérer la remise à zéro de la quantité après la commande 
+		document.getElementById(idx + "-qte").value="0";
 		// et tous les comportements du bouton représentant le chariot 
+		/** desactivation du bouton apres la remise a zero */
+		this.style.opacity="0.25";
+		this.removeEventListener("click", orderProduct); 
 	}
 }
+
 
 
 // ======================= fonctions à coder =======================
@@ -157,8 +174,17 @@ const orderProduct = function () {
 */
 const verifQuantity = function () {
 	//TODO
+	const valeur = parseInt(this.value);
+	const index = parseInt(this.id);
+	const commander = document.getElementById(index + "-order");
+	if (isNaN(valeur) || valeur < 0 || valeur > MAX_QTY) {
+		this.value="0";
+		commander.style.opacity="0.25";
+	}else {
+		commander.style.opacity="1";
+		commander.addEventListener("click",orderProduct);
+	}
 }
-
 
 
 /**
@@ -168,6 +194,7 @@ const verifQuantity = function () {
 */
 const addProductToCart = function (index, qty) {
 	//TODO
+	
 }
 
 
