@@ -138,7 +138,7 @@ const createFigureBlock = function (product) {
 	img.src=product.image;
 	img.alt=product.name;
 	figure.appendChild(img);
-	
+
 	return figure;
 
 }
@@ -147,16 +147,19 @@ const createFigureBlock = function (product) {
 
 /** 
 * @todo Q8
+* Cette fonction est appelée lorsque l'utilisateur clique sur le bouton de commande d'un produit
+* Elle ajoute le produit au panier (variable globale cart) et met à jour le total
+* TODO : gérer la remise à zéro de la quantité après la commande et tous les comportements du bouton représentant le chariot
 */
 
 const orderProduct = function () {
 	const idx = parseInt(this.id);
 	const qty = parseInt(document.getElementById(idx + "-qte").value);
+	const idoreder = document.getElementById(idx + "-order");
 	if (qty > 0) {
-		addProductToCart(idx, qty); // ajoute un produit au panier
-		//TODO gérer la remise à zéro de la quantité après la commande 
-		// et tous les comportements du bouton représentant le chariot
-		//TODO gérer la remise à zéro de la quantité après la commande 
+		addProductToCart(idx, qty);
+		 // ajoute un produit au panier
+		//TODO gérer la remise à zéro de la quantité après la commande  
 		document.getElementById(idx + "-qte").value="0";
 		// et tous les comportements du bouton représentant le chariot 
 		/** desactivation du bouton apres la remise a zero */
@@ -187,6 +190,35 @@ const verifQuantity = function () {
 }
 
 
+const createDeleteButton = function (index) {
+	const control = document.createElement("div");
+	control.className = "controle";
+
+	// Crée le bouton de commande
+	const button = document.createElement("button");
+	button.className = 'retirer';
+	button.id = index + "-remove";
+	button.addEventListener("click", deleteInCart);
+	control.appendChild(button);
+
+	return control;
+}
+
+
+
+const deleteInCart = function () {
+	const enfant = document.getElementById(parseInt(this.id) + "-achat");
+	const parent = document.getElementsByClassName("achats");
+	parent[0].removeChild(enfant);
+	const quantite = enfant.querySelector(".quantite");
+	const contenu = parseInt(quantite.textContent);
+	const prix = enfant.querySelector(".prix");
+	total = total - (contenu*(parseInt(prix.textContent)));
+	updateTotal();
+}
+
+
+
 /**
 * @todo Q9
 * @param {number} index
@@ -194,9 +226,39 @@ const verifQuantity = function () {
 */
 const addProductToCart = function (index, qty) {
 	//TODO
-	
-}
+	/** pour ne pas rajouter plusieurs fois un element */
+	let product = catalog[index];
+	const existance = document.getElementById(index+"-achat");
+	if (existance) {
+		const quantite = existance.querySelector(".quantite");
+		let nouvelleQuantite = parseInt(quantite.textContent) + qty;
+		if (nouvelleQuantite > 9) {
+			nouvelleQuantite = 9;
+		}
+		quantite.textContent = nouvelleQuantite;
 
+/** t'es obligé d'utiliser un textContent parce quantité c'est un selecteur css et nous on a besoin de sa valeur pour le modifier */
+/** vu que tu dois utiliser un textContent t'as plus le droit de faire total+= comme ici (total = total + (parseInt(quantite)*product.price);) sinon tu vas obtenir des valeurs elevees */
+		/** et donc on actualise le prix comme ceci */
+		total = (parseInt(quantite.textContent)*product.price);
+		
+	}
+	else {
+		const element = document.createElement("div");
+		element.className = "achat";
+		element.id = index + "-achat";
+		/** si l'élement n'existait pas au debut il faut mettre le prix une premiere fois */
+		total = total + (product.price*qty);
+		element.appendChild(createFigureBlock(product));
+		element.appendChild(createBlock("h4",product.description));
+		element.appendChild(createBlock("div", qty, "quantite"));
+		element.appendChild(createBlock("div", product.price, "prix"));
+		element.appendChild(createDeleteButton(index));
+	const achats = document.getElementsByClassName("achats");
+	achats[0].appendChild(element);
+	}
+	updateTotal();
+}
 
 
 
