@@ -1,6 +1,9 @@
 h1{
     text-align: center;
 }
-#panier{
-    background-color: white;
+div#panier{
+    background-color: black;
+}
+.produit:hover {
+    background-color: rgb(239, 136, 2);
 }
