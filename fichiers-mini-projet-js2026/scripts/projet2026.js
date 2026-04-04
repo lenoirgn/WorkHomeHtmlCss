@@ -9,7 +9,8 @@ const MAX_QTY = 9;
 const cart = []
 // total actuel des produits dans le panier
 let total = 0;
-
+const listeCatalog = ["data/catalog2.js","data/catalog2.js"];
+let indexCatalogue = 0;
 
 // === initialisation au chargement de la page ===
 
@@ -22,6 +23,9 @@ const init = function () {
 	updateTotal();
 	const filter = document.getElementById("filter");
 	filter.addEventListener("keyup", filterDisplaidProducts);
+	updateViderPanierButton();
+	createButtonChangeCatalogue();
+
 }
 
 
@@ -150,6 +154,7 @@ const createFigureBlock = function (product) {
 const orderProduct = function () {
 	const idx = parseInt(this.id);
 	const qty = parseInt(document.getElementById(idx + "-qte").value);
+	
 	if (qty > 0) {
 		addProductToCart(idx, qty); // ajoute un produit au panier
 		//TODO gérer la remise à zéro de la quantité après la commande 
@@ -159,7 +164,7 @@ const orderProduct = function () {
 		this.style.opacity="0.25";
 		this.removeEventListener("click", orderProduct);
 	}
-
+	
 }
 
 
@@ -205,15 +210,15 @@ const createDeleteButton = function (index) {
 
 
 
-const deleteInCart = function () {
-	const enfant = document.getElementById(parseInt(this.id) + "-achat");
-	const parent = document.getElementsByClassName("achats");
-	parent[0].removeChild(enfant);
-	const quantite = enfant.querySelector(".quantite");
-	const contenu = parseInt(quantite.textContent);
-	const prix = enfant.querySelector(".prix");
-	total = total - (contenu*(parseInt(prix.textContent)));
+function deleteInCart(){
+	const enfant=document.getElementById(parseInt(this.id)+"-achat");
+	const parent=enfant.parentNode;
+	quantite=enfant.querySelector(".quantite");
+	parent.removeChild(enfant);
+	total=total-(parseInt(quantite.textContent)*catalog[parseInt(this.id)].price);
 	updateTotal();
+	updateViderPanierButton();
+
 }
 
 
@@ -236,9 +241,9 @@ const addProductToCart = function (index, qty) {
 		}
 		quantite.textContent = nouvelleQuantite;
 
-/** t'es obligé d'utiliser un textContent parce quantité c'est un selecteur css et nous on a besoin de sa valeur pour le modifier */
-/** vu que tu dois utiliser un textContent t'as plus le droit de faire total+= comme ici (total = total + (parseInt(quantite)*product.price);) sinon tu vas obtenir des valeurs elevees */
-		/** et donc on actualise le prix comme ceci */
+	/** t'es obligé d'utiliser un textContent parce quantité c'est un selecteur css et nous on a besoin de sa valeur pour le modifier */
+	/** vu que tu dois utiliser un textContent t'as plus le droit de faire total+= comme ici (total = total + (parseInt(quantite)*product.price);) sinon tu vas obtenir des valeurs elevees */
+	/** et donc on actualise le prix comme ceci */
 		total = (parseInt(quantite.textContent)*product.price);
 		
 	}
@@ -257,10 +262,11 @@ const addProductToCart = function (index, qty) {
 		
 		achats[0].appendChild(element);
 	}
+	
 	updateTotal();
+	updateViderPanierButton();
+
 }
-
-
 
 
 /**
@@ -276,17 +282,68 @@ const filterDisplaidProducts = function() {
     /* parcourir tous les produits */
     for (let i = 0; i < products.length; i++) {
         /* récupérer le nom du produit (h4 dans la div.produit) */
-        const productName = products[i].querySelector("h4").textContent.toLowerCase();
+		const product=products[i];
+        const productName = product.querySelector("h4").textContent.toLowerCase();
 
         /* vérifier si le nom contient le texte du filtre */
         if (productName.indexOf(filterText) !== -1) {
-            products[i].style.display = "";  // afficher
+            product.style.display = "";  // afficher
         } else {
-            products[i].style.display = "none";   // masquer
+            product.style.display = "none";   // masquer
         }
     }
 };
-   
+function createButtonVidePanier() {
+	const panier = document.getElementById("panier");
+	const button = document.createElement("button");
+	const frere=document.getElementsByClassName("achats")[0];
+	button.textContent = "Vider le panier";
+	button.id="vider-panier";
+	button.addEventListener("click", videPanier);
+	panier.insertBefore(button, frere);
+	
+}
+
+function updateViderPanierButton() {
+    const btn = document.getElementById("vider-panier");
+
+    if (total > 0) {
+        if (!btn) {
+            createButtonVidePanier();
+        }
+    } else {
+        if (btn) {
+            btn.remove();
+        }
+    }
+}
+
+
+
+const videPanier = function() {
+	const achats = document.getElementsByClassName("achats");
+	while (achats[0].firstChild) {
+		achats[0].removeChild(achats[0].firstChild);
+	}
+	total = 0;
+	updateTotal();
+	updateViderPanierButton();
+}
+
+
+
+function createButtonChangeCatalogue() {
+    const boutiques = document.getElementById("boutique");
+    const button = document.createElement("button");
+    button.textContent = "Changer de catalogue";
+    button.addEventListener("click", changeCatalogue);
+    boutiques.insertBefore(button, boutiques.firstChild);
+}
+
+
+function changeCatalogue() {
+    
+}
 
 // ====================  Exécuter l'initialisation ======================= 
 /*Q1*/

@@ -2,8 +2,32 @@ h1{
     text-align: center;
 }
 div#panier{
-    background-color: black;
+    background-color: white;
 }
 .produit:hover {
     background-color: rgb(239, 136, 2);
+}
+
+#vider-panier {
+    display: block;
+    width: 200px;
+    margin: 15px auto;
+    padding: 12px 18px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+#vider-panier:hover {
+    background-color: #e63939;
+    transform: scale(1.05);
+}
+
+#vider-panier:active {
+    transform: scale(0.95);
 }
