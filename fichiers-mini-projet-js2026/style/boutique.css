@@ -2,7 +2,7 @@ h1{
     text-align: center;
 }
 div#panier{
-    background-color: white;
+    background-color: rgb(64, 60, 60);
 }
 .produit:hover {
     background-color: rgb(239, 136, 2);

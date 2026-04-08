@@ -1,5 +1,10 @@
 // VOTRE NOM A COMPLETER ICI
-
+/**
+ * Projet JS 2026 : Boutique en ligne
+ * Membres du groupe :
+ * 1- Mamadou Radjaye Sow  
+ * 2- NZOLA SARAH
+ */
 // ===  variables globales === 
 
 // constantes
@@ -9,8 +14,8 @@ const MAX_QTY = 9;
 const cart = []
 // total actuel des produits dans le panier
 let total = 0;
-const listeCatalog = ["data/catalog2.js","data/catalog2.js"];
-let indexCatalogue = 0;
+
+
 
 // === initialisation au chargement de la page ===
 
@@ -24,7 +29,6 @@ const init = function () {
 	const filter = document.getElementById("filter");
 	filter.addEventListener("keyup", filterDisplaidProducts);
 	updateViderPanierButton();
-	createButtonChangeCatalogue();
 
 }
 
@@ -137,7 +141,7 @@ const createOrderControlBlock = function (index) {
 * @return {Element}
 */
 const createFigureBlock = function (product) {
-	// TODO : code incorrect : à modifier Q4 
+	// TODO : 
 	const figure = document.createElement("figure");
 	const img = document.createElement("img");
 	img.src=product.image;
@@ -149,6 +153,7 @@ const createFigureBlock = function (product) {
 
 /** 
 * @todo Q8
+* ajoute le produit d'indice index et de quantité qty au panier  et met à jour le total
 */
 
 const orderProduct = function () {
@@ -172,6 +177,8 @@ const orderProduct = function () {
 
 /**
 * @todo Q6- Q7
+|* Verifie que la quantité saisie dans le champ de saisie est valide (comprise entre 1 et MAX_QTY)
+|* et active ou désactive le bouton de commande en conséquence
 */
 const verifQuantity = function () {
 	const valeur = parseInt(this.value);
@@ -191,14 +198,11 @@ const verifQuantity = function () {
 	}
 }
 
-
-
-
 const createDeleteButton = function (index) {
 	const control = document.createElement("div");
 	control.className = "controle";
 
-	// Crée le bouton de commande
+	// Crée le bouton de corbeille
 	const button = document.createElement("button");
 	button.className = 'retirer';
 	button.id = index + "-remove";
@@ -241,9 +245,6 @@ const addProductToCart = function (index, qty) {
 		}
 		quantite.textContent = nouvelleQuantite;
 
-	/** t'es obligé d'utiliser un textContent parce quantité c'est un selecteur css et nous on a besoin de sa valeur pour le modifier */
-	/** vu que tu dois utiliser un textContent t'as plus le droit de faire total+= comme ici (total = total + (parseInt(quantite)*product.price);) sinon tu vas obtenir des valeurs elevees */
-	/** et donc on actualise le prix comme ceci */
 		total = (parseInt(quantite.textContent)*product.price);
 		
 	}
@@ -330,20 +331,6 @@ const videPanier = function() {
 	updateViderPanierButton();
 }
 
-
-
-function createButtonChangeCatalogue() {
-    const boutiques = document.getElementById("boutique");
-    const button = document.createElement("button");
-    button.textContent = "Changer de catalogue";
-    button.addEventListener("click", changeCatalogue);
-    boutiques.insertBefore(button, boutiques.firstChild);
-}
-
-
-function changeCatalogue() {
-    
-}
 
 // ====================  Exécuter l'initialisation ======================= 
 /*Q1*/
