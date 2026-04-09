@@ -149,11 +149,12 @@ const createFigureBlock = function (product) {
 	figure.appendChild(img);
 	return figure;
 }
-
+ 
 
 /** 
 * @todo Q8
-* ajoute le produit d'indice index et de quantité qty au panier  et met à jour le total
+* ajoute le produit d'indice index et de quantité qty au panier  et 
+* met la valeur du input de quantité à 0 et désactive le bouton de commande pour ce produit
 */
 
 const orderProduct = function () {
@@ -188,8 +189,6 @@ const verifQuantity = function () {
 	if (valeur>MAX_QTY || valeur<=0 || isNaN(valeur)) {
 		this.value="0";
 		panier.style.opacity="0.25";
-		/**a retirer plus tard pour verifier quelque chose */
-		panier.removeEventListener("click",orderProduct);
 
 	}
 	else {
@@ -197,7 +196,11 @@ const verifQuantity = function () {
 		panier.addEventListener("click",orderProduct);
 	}
 }
-
+/** Cette fonction crée un bouton de suppression pour un produit dans le panier, avec un gestionnaire d'événement pour supprimer 
+ *  le produit du panier lorsqu'on clique dessus
+ * @param {number} index - l'indice du produit dans le catalogue
+ * @return {Element} un élément div.controle contenant le bouton de suppression
+ */
 const createDeleteButton = function (index) {
 	const control = document.createElement("div");
 	control.className = "controle";
@@ -212,7 +215,10 @@ const createDeleteButton = function (index) {
 	return control;
 }
 
-
+/**
+ * cette fonction supprime un produit du panier, met à jour le total et 
+ * met à jour le bouton "Vider le panier" en conséquence.
+ */
 
 function deleteInCart(){
 	const enfant=document.getElementById(parseInt(this.id)+"-achat");
@@ -294,6 +300,11 @@ const filterDisplaidProducts = function() {
         }
     }
 };
+
+/**
+ * elle crée un bouton "Vider le panier" et l'ajoute à la section panier, juste avant la section des achats
+ * et lui ajoute un gestionnaire d'événement pour vider le panier lorsqu'on clique dessus
+ */
 function createButtonVidePanier() {
 	const panier = document.getElementById("panier");
 	const button = document.createElement("button");
@@ -304,7 +315,10 @@ function createButtonVidePanier() {
 	panier.insertBefore(button, frere);
 	
 }
-
+/**
+ * cette fonction vérifie si le total du panier est supérieur à 0, et si c'est le cas, elle crée le bouton "Vider le panier" s'il n'existe pas déjà.
+ *  Si le total est égal à 0, elle supprime le bouton s'il existe.
+ */
 function updateViderPanierButton() {
     const btn = document.getElementById("vider-panier");
 
@@ -319,7 +333,10 @@ function updateViderPanierButton() {
     }
 }
 
-
+/**
+ *  cette fonction supprime tous les éléments du panier, remet le total à 0,
+ *  met à jour l'affichage du total et met à jour le bouton "Vider le panier" en conséquence.
+ */
 
 const videPanier = function() {
 	const achats = document.getElementsByClassName("achats");
