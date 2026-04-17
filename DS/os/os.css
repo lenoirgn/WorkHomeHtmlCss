@@ -1,0 +1,63 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* Titre */
+h1 {
+  color: #D5AC7A;
+  margin-bottom: 20px;
+}
+
+/* Conteneur des images */
+#images {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+/* Images */
+#images img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+  background: #ddd;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Effet au survol */
+#images img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* Bouton */
+#choix {
+  background: #D5AC7A;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+/* Hover bouton */
+#choix:hover {
+  background: #c49a66;
+  transform: translateY(-2px);
+}
+
+/* Click bouton */
+#choix:active {
+  transform: scale(0.95);
+}
