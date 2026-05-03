@@ -1,0 +1,19 @@
+table tr{
+    border: 1px solid black;
+    padding: 10px;
+    font: optional;
+
+
+}
+table tr td:nth-of-type(even){
+    border: 1px solid black;
+    padding: 10px;
+    color: red;
+    background-color: #646060;
+}
+table tr td:nth-child(3n+1){
+    border: 1px solid black;
+    padding: 10px;
+    color: white;
+    background-color: #000000;
+}
