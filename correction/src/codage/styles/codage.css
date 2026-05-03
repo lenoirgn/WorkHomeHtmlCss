@@ -1,0 +1,23 @@
+div#color{
+    margin : auto;
+    width : 400px;
+    height: 400px;
+    background-color : white;
+    border : 1px solid black;
+}
+
+h1, #controles{
+    text-align: center;
+    margin-bottom : 30px;
+}
+
+input:first-child{ /* priorité (0,1,1)*/
+    color:rgb(255,0,0); /* on accepte aussi red, etc.. */
+}
+
+input:nth-child(2){
+    color:rgb(0,255,0);
+}
+input:nth-child(3){
+    color: rgb(0,0,255);
+}

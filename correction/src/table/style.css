@@ -1,0 +1,13 @@
+td{
+
+    border : 1px solid black;
+}
+
+table{
+    border-collapse:collapse;
+    caption-side: bottom;
+}
+
+caption{
+    font-size: x-small;
+}

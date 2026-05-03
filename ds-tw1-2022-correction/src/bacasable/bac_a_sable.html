@@ -1,0 +1,40 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
+<head>
+	<meta charset="UTF-8"/> 
+	<title>Bac à sable CSS - DS TW1 2022</title>	
+    <link rel="stylesheet" type="text/css" href="style.css"/>   
+	<script src="script.js"></script>
+</head>
+
+<body>
+	<h1>Bac à sable CSS</h1>
+	<div id="control">
+		<h2>Modifications appliquées à la div <code>test</code></h2>
+		Augmenter la largeur : <button id="wider">&#10231;</button>
+		<br/>	
+		<label for="back">Activer/Désactiver la couleur d'arrière plan</label>
+		<input id="back" name="back" type="checkbox"/>
+		<div id="info">
+			<h2>Informations sur la taille de la div <code>test</code></h2>
+			<ul>
+				<li>Largeur de la div : <span class="dimension">200px</span></li>
+				<li>Hauteur de la div : <span class="dimension">100px</span></li>
+			</ul>
+		</div>
+		<h2>Modifications appliquées aux div de classe <code>carre</code></h2>
+		Couleur des chiffres: 
+		<div id="colortextControls">
+			<button>red</button> <button>green</button> <button>blue</button>
+		</div>	
+	</div>
+	<div id="view">
+		<h3>Apercu des éléments <code>div</code></h3>
+		<div id="test">
+				<div class="carre">1</div>
+				<div class="carre">2</div>
+				<div class="carre">3</div>
+		</div>
+	</div>
+</body>
+</html>
